@@ -1,0 +1,37 @@
+{
+  "name": "Bug Reporter",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "wakamaka",
+  "icons": {
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "images/icon256.png",
+    "default_title": "Bug Reporter"
+  },
+  "web_accessible_resources": [
+    "/images/*.png",
+    "inject-script.js"
+  ],
+  "offline_enabled": true,
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content-script.js"
+      ]
+    }
+  ]
+}
